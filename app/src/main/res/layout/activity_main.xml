@@ -29,13 +29,14 @@
 
     <ImageView
         android:id="@+id/albumArt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/strangers_cover_art"
         app:layout_constraintRight_toRightOf="@id/changeUser"
         app:layout_constraintLeft_toLeftOf="@id/userName"
         app:layout_constraintTop_toBottomOf="@id/changeUser"
         android:contentDescription="@string/album_art_seven_lions"
+        app:layout_constraintDimensionRatio="1:1"
         />
 
     <TextView
@@ -49,9 +50,17 @@
         app:layout_constraintRight_toRightOf="@id/albumArt"
         />
 
-
-
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/song_name_seven_lions"
+        app:layout_constraintTop_toBottomOf="@id/songName"
+        app:layout_constraintLeft_toLeftOf="@id/albumArt"
+        app:layout_constraintRight_toRightOf="@id/albumArt"
+        android:textSize="19sp"
+        android:ellipsize="end"
+        android:maxLines="1"
+    />
 
 
 
