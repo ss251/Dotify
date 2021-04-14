@@ -51,6 +51,7 @@
         />
 
     <TextView
+        android:id="@+id/artistName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/song_name_seven_lions"
@@ -61,6 +62,17 @@
         android:ellipsize="end"
         android:maxLines="1"
     />
+
+    <TextView
+        android:id="@+id/noPlays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/artistName"
+        app:layout_constraintLeft_toLeftOf="@id/artistName"
+        app:layout_constraintRight_toRightOf="@id/artistName"
+        android:paddingTop="25dp"
+        android:text="@string/_1000_plays"
+        />
 
 
 
