@@ -54,12 +54,6 @@ class PlayerActivity : AppCompatActivity() {
             val song: Song? = intent.getParcelableExtra<Song>(SONG_KEY)
             songName.text = song?.title
             artistName.text = song?.artist
-            val songLength: Int = (songName.height as Int
-                    / songName.lineHeight)
-            songName.maxLines = songLength
-            val artistLength: Int = (artistName.height as Int
-                    / artistName.lineHeight)
-            artistName.maxLines = artistLength
             noPlays.text = "${noOfPlays.toString()}"
             if (song != null) {
                 albumArt.setImageResource(song?.largeImageID)
