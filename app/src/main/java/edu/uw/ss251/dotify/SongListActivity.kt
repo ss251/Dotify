@@ -1,13 +1,22 @@
 package edu.uw.ss251.dotify
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
 import edu.uw.ss251.dotify.databinding.ActivitySongListBinding
 
+fun loadSongListActivity(context: Context) {
+    val intent = Intent(context, SongListActivity::class.java)
+    context.startActivity(intent)
+}
 
 class SongListActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySongListBinding
+    private lateinit var currentSong: Song
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -16,8 +25,26 @@ class SongListActivity : AppCompatActivity() {
         setContentView(binding.root)
         title = getString(R.string.default_header)
         val songs = SongDataProvider.getAllSongs()
-        val songListAdapter = SongListAdapter(songs)
 
-        binding.rvSongs.adapter = songListAdapter
+
+        with(binding) {
+            val songListAdapter = SongListAdapter(songs)
+            currentSong = songs[1]
+            tvCurrentSong.text = "${songs[1].title} - ${songs[1].artist}"
+            rvSongs.adapter = songListAdapter
+
+            songListAdapter.onSongClickListener = {song: Song ->
+                tvCurrentSong.text = "${song.title} - ${song.artist}"
+                currentSong = song
+            }
+
+            btnShuffle.setOnClickListener {
+                songListAdapter.updateSongs(songs.toMutableList().shuffled())
+            }
+
+            tvPlayer.setOnClickListener {
+                loadPlayerActivity(this@SongListActivity, currentSong)
+            }
+        }
     }
 }
