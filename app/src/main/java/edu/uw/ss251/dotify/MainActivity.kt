@@ -40,10 +40,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickChangeUser(view: View) {
+
         val userName = findViewById<TextView>(R.id.userName)
         val userNameEdit = findViewById<TextView>(R.id.userNameEdit)
         val changeUser = findViewById<TextView>(R.id.changeUser)
-        val switcher = findViewById<ViewSwitcher>(R.id.viewSwitcher)
+        userNameEdit.isVisible = true
         if(changeUser.text == "Apply") {
             userNameEdit.isVisible = false
             userName.text = userNameEdit.text
@@ -52,7 +53,6 @@ class MainActivity : AppCompatActivity() {
             return
         }
         userName.isVisible = false
-        switcher.showNext()
         changeUser.text = "Apply"
     }
 }
