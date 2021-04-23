@@ -27,13 +27,13 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Skipping to previous track", Toast.LENGTH_SHORT).show()
     }
 
-    fun clickPlay (view: View) {
+    fun clickPlay(view: View) {
         val noPlays = findViewById<TextView>(R.id.noPlays)
         plays += 1
         noPlays.text = (plays).toString()
     }
 
-    fun clickNext (view: View) {
+    fun clickNext(view: View) {
         Toast.makeText(this, "Skipping to next track", Toast.LENGTH_SHORT).show()
     }
 

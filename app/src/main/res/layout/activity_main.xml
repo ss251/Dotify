@@ -8,7 +8,6 @@
     android:padding="16dp">
 
     <ViewSwitcher
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/viewSwitcher"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
@@ -33,7 +32,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="@id/changeUser"
         app:layout_constraintBottom_toBottomOf="@id/changeUser"
-        android:hint="Enter new username"/>
+        android:hint="@string/enter_new_username"/>
     </ViewSwitcher>
 
     <Button
@@ -118,7 +117,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/playButton"
         app:layout_constraintTop_toTopOf="@id/playButton"
-        android:contentDescription="previousButton"/>
+        android:contentDescription="@string/previousbutton"/>
 
     <ImageView
         android:id="@+id/playButton"
@@ -134,7 +133,7 @@
         app:layout_constraintLeft_toRightOf="@id/previousButton"
         app:layout_constraintRight_toLeftOf="@id/nextButton"
         app:layout_constraintTop_toBottomOf="@id/noPlays"
-        android:contentDescription="playButton"/>
+        android:contentDescription="@string/playbutton"/>
 
     <ImageView
         android:id="@+id/nextButton"
@@ -149,7 +148,7 @@
         app:layout_constraintLeft_toRightOf="@id/playButton"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/playButton"
-        android:contentDescription="nextButton"/>
+        android:contentDescription="@string/nextbutton"/>
 
 
 

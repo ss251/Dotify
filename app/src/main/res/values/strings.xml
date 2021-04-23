@@ -8,4 +8,8 @@
     <string name="_1000_plays">1000</string>
     <string name="plays">plays</string>
     <string name="default_header">All Songs</string>
+    <string name="enter_new_username">Enter new username</string>
+    <string name="previousbutton">previousButton</string>
+    <string name="playbutton">playButton</string>
+    <string name="nextbutton">nextButton</string>
 </resources>
