@@ -48,15 +48,13 @@ class PlayerActivity : AppCompatActivity() {
         noPlays.text = noOfPlays.toString()
 
         with(binding) {
-            ibBack.setOnClickListener {
-                loadSongListActivity(this@PlayerActivity)
-            }
-            val song: Song? = intent.getParcelableExtra<Song>(SONG_KEY)
+
+            val song: Song? = intent.getParcelableExtra(SONG_KEY)
             songName.text = song?.title
             artistName.text = song?.artist
-            noPlays.text = "${noOfPlays.toString()}"
+            noPlays.text = noOfPlays.toString()
             if (song != null) {
-                albumArt.setImageResource(song?.largeImageID)
+                albumArt.setImageResource(song.largeImageID)
             }
 
         }
@@ -80,15 +78,16 @@ class PlayerActivity : AppCompatActivity() {
             val userName = binding.userName
             val userNameEdit = binding.userNameEdit
             val changeUser = binding.changeUser
-            userNameEdit.isVisible = true
-            if (changeUser.text == "Apply") {
+            if (changeUser.text == getString(R.string.apply_change_user)) {
                 userNameEdit.isVisible = false
-                userName.text = userNameEdit.text
                 userName.isVisible = true
-                changeUser.text = "Change User"
+                userName.text = userNameEdit.text
+                changeUser.text = getString(R.string.change_user)
                 return
             }
             userName.isVisible = false
-            changeUser.text = "Apply"
+            userNameEdit.isVisible = true
+
+            changeUser.text = getString(R.string.apply_change_user)
         }
 }

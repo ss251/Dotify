@@ -7,30 +7,23 @@
     tools:context=".PlayerActivity"
     android:padding="16dp">
 
-    <ImageButton
-        android:id="@+id/ibBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/ic_previous"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="12dp"
-        android:background="@android:color/transparent"
-        android:foreground="?selectableItemBackground"/>
+
     <ViewSwitcher
         android:id="@+id/viewSwitcher"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
+
         <TextView
             android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/first_avenger"
             android:textSize="18sp"
+            android:paddingTop="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/changeUser"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="@id/changeUser"
-            app:layout_constraintBottom_toBottomOf="@id/changeUser"
+            app:layout_constraintRight_toLeftOf="@id/changeUser"
             />
 
         <EditText
@@ -43,6 +36,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="@id/changeUser"
             app:layout_constraintBottom_toBottomOf="@id/changeUser"
+            android:autofillHints="@string/enter_new_username"
             android:hint="@string/enter_new_username"/>
     </ViewSwitcher>
 
@@ -101,7 +95,7 @@
         app:layout_constraintRight_toLeftOf="@id/plays"
         app:layout_constraintTop_toBottomOf="@id/artistName"
         app:layout_constraintHorizontal_chainStyle="packed"
-        android:layout_marginRight="8dp"/>
+        android:layout_marginEnd="8dp"/>
 
     <TextView
         android:id="@+id/plays"

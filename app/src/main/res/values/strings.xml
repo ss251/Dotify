@@ -12,4 +12,5 @@
     <string name="previousbutton">previousButton</string>
     <string name="playbutton">playButton</string>
     <string name="nextbutton">nextButton</string>
+    <string name="apply_change_user">Apply</string>
 </resources>
