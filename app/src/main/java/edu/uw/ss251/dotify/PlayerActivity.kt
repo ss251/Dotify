@@ -73,6 +73,11 @@ class PlayerActivity : AppCompatActivity() {
             Toast.makeText(this, "Skipping to next track", Toast.LENGTH_SHORT).show()
         }
 
+        fun clickSettings(view: View) {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
         //username and edittext (hw1 and 2)
         /*fun clickChangeUser(view: View) {
 

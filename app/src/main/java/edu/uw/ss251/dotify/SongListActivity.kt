@@ -1,7 +1,11 @@
 package edu.uw.ss251.dotify
 
-import android.os.Bundle
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
 import edu.uw.ss251.dotify.databinding.ActivitySongListBinding
@@ -10,12 +14,13 @@ class SongListActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySongListBinding
     private lateinit var currentSong: Song
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         binding = ActivitySongListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        title = getString(R.string.default_header)
+        title = getString(R.string.all_songs_header)
         val songs = SongDataProvider.getAllSongs()
 
 
