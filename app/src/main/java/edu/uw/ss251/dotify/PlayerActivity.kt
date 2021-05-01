@@ -73,7 +73,8 @@ class PlayerActivity : AppCompatActivity() {
             Toast.makeText(this, "Skipping to next track", Toast.LENGTH_SHORT).show()
         }
 
-        fun clickChangeUser(view: View) {
+        //username and edittext (hw1 and 2)
+        /*fun clickChangeUser(view: View) {
 
             val userName = binding.userName
             val userNameEdit = binding.userNameEdit
@@ -89,5 +90,5 @@ class PlayerActivity : AppCompatActivity() {
             userNameEdit.isVisible = true
 
             changeUser.text = getString(R.string.apply_change_user)
-        }
+        }*/
 }

@@ -7,58 +7,31 @@
     tools:context=".PlayerActivity"
     android:padding="16dp">
 
-
-    <ViewSwitcher
-        android:id="@+id/viewSwitcher"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <TextView
-            android:id="@+id/userName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/first_avenger"
-            android:textSize="18sp"
-            android:paddingTop="10sp"
-            app:layout_constraintBottom_toBottomOf="@id/changeUser"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@id/changeUser"
-            app:layout_constraintRight_toLeftOf="@id/changeUser"
-            />
-
-        <EditText
-            android:id="@+id/userNameEdit"
-            android:inputType="text"
-            android:imeOptions="actionDone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@id/changeUser"
-            app:layout_constraintBottom_toBottomOf="@id/changeUser"
-            android:autofillHints="@string/enter_new_username"
-            android:hint="@string/enter_new_username"/>
-    </ViewSwitcher>
-
     <Button
-        android:id="@+id/changeUser"
+        android:id="@+id/btnSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="clickChangeUser"
-        android:text="@string/change_user"
+
+        android:text="@string/settings"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <ImageView
         android:id="@+id/albumArt"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/strangers_cover_art"
-        app:layout_constraintRight_toRightOf="@id/changeUser"
-        app:layout_constraintLeft_toLeftOf="@+id/viewSwitcher"
-        app:layout_constraintTop_toBottomOf="@id/changeUser"
         android:contentDescription="@string/album_art_seven_lions"
+        android:src="@drawable/strangers_cover_art"
         app:layout_constraintDimensionRatio="1:1"
+
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSettings"
+        app:layout_constraintBottom_toTopOf="@+id/songName"
+
         />
 
     <TextView
