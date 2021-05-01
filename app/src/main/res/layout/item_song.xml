@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_height="wrap_content"
-    android:id="@+id/itemSong">
+    android:id="@+id/itemSong"
+    android:padding="10sp">
 
     <ImageView
         android:id="@+id/ivSongPic"
@@ -15,14 +16,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:contentDescription="albumart"
+        android:contentDescription="@string/albumart_img_view"
         />
 
     <TextView
         android:id="@+id/tvSongTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@id/tvSongArtist"
         app:layout_constraintLeft_toRightOf="@id/ivSongPic"
@@ -33,7 +34,7 @@
         android:id="@+id/tvSongArtist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/ivSongPic"
         app:layout_constraintLeft_toRightOf="@id/ivSongPic"
