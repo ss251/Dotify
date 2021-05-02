@@ -18,6 +18,12 @@
     <string name="shuffle">Shuffle</string>
     <string name="albumart_img_view">albumart</string>
     <string name="settings_header">Settings</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile_button">Profile</string>
+    <string name="about_button">About</string>
+    <string name="profile_statistics">Profile Statistics</string>
+    <string name="github_url">https://github.com/ss251/Dotify</string>
+    <string name="app_version">Version: 1.0</string>
+    <string name="creator_sailesh_sivakumar">Creator: Sailesh Sivakumar</string>
+    <string name="date_created_2021_05_01">Date Created: 2021-05-01</string>
 </resources>

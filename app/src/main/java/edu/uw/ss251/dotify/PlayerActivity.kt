@@ -45,6 +45,11 @@ class PlayerActivity : AppCompatActivity() {
             clickNext(view)
         }
 
+        with(binding) {
+            ibBack.setOnClickListener {
+                loadSongListActivity(this@PlayerActivity)
+            }
+
         noPlays.text = noOfPlays.toString()
 
         with(binding) {
@@ -55,6 +60,12 @@ class PlayerActivity : AppCompatActivity() {
             noPlays.text = noOfPlays.toString()
             if (song != null) {
                 albumArt.setImageResource(song.largeImageID)
+            }
+
+            btnSettings.setOnClickListener {
+                if (song != null) {
+                loadSettingsActivity(this@PlayerActivity, song, noOfPlays)
+            }
             }
 
         }

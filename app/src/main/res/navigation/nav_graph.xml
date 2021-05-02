@@ -1,5 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/settingsFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="edu.uw.ss251.dotify.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="edu.uw.ss251.dotify.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="edu.uw.ss251.dotify.StatisticsFragment"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_statistics">
+        <argument
+            android:name="song"
+            app:argType="com.ericchee.songdataprovider.Song" />
+        <argument
+            android:name="played"
+            app:argType="integer"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="edu.uw.ss251.dotify.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings">
+        <argument
+            android:name="song"
+            app:argType="com.ericchee.songdataprovider.Song" />
+        <argument
+            android:name="played"
+            app:argType="integer" />
+    </fragment>
+    <action
+        android:id="@+id/action_dispatch_stats"
+        app:destination="@id/statisticsFragment" />
+    <action
+        android:id="@+id/action_dispatch_profile"
+        app:destination="@id/profileFragment" />
+    <action
+        android:id="@+id/action_dispatch_about"
+        app:destination="@id/aboutFragment" />
 
 </navigation>
