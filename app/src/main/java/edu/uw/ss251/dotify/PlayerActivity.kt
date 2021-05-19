@@ -35,7 +35,7 @@ class PlayerActivity : AppCompatActivity() {
 
         val noPlays = binding.noPlays
 
-        binding.previousButton.setOnClickListener{
+        binding.previousButton.setOnClickListener {
             clickPrevious(view)
         }
         binding.playButton.setOnClickListener {
@@ -46,28 +46,27 @@ class PlayerActivity : AppCompatActivity() {
         }
 
         with(binding) {
-            ibBack.setOnClickListener {
-                loadSongListActivity(this@PlayerActivity)
-            }
 
-        noPlays.text = noOfPlays.toString()
 
-        with(binding) {
-
-            val song: Song? = intent.getParcelableExtra(SONG_KEY)
-            songName.text = song?.title
-            artistName.text = song?.artist
             noPlays.text = noOfPlays.toString()
-            if (song != null) {
-                albumArt.setImageResource(song.largeImageID)
-            }
 
-            btnSettings.setOnClickListener {
+            with(binding) {
+
+                val song: Song? = intent.getParcelableExtra(SONG_KEY)
+                songName.text = song?.title
+                artistName.text = song?.artist
+                noPlays.text = noOfPlays.toString()
                 if (song != null) {
-                loadSettingsActivity(this@PlayerActivity, song, noOfPlays)
-            }
-            }
+                    albumArt.setImageResource(song.largeImageID)
+                }
 
+                btnSettings.setOnClickListener {
+                    if (song != null) {
+                        loadSettingsActivity(this@PlayerActivity, song, noOfPlays)
+                    }
+                }
+
+            }
         }
     }
 
@@ -107,4 +106,5 @@ class PlayerActivity : AppCompatActivity() {
 
             changeUser.text = getString(R.string.apply_change_user)
         }*/
-}
+
+    }
