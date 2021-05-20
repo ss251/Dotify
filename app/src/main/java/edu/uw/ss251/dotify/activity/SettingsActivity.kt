@@ -1,14 +1,14 @@
-package edu.uw.ss251.dotify
+package edu.uw.ss251.dotify.activity
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ericchee.songdataprovider.Song
-import edu.uw.ss251.dotify.databinding.ActivitySettingsBinding
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
-import edu.uw.ss251.dotify.databinding.ActivitySongListBinding
+import com.ericchee.songdataprovider.Song
+import edu.uw.ss251.dotify.R
+import edu.uw.ss251.dotify.databinding.ActivitySettingsBinding
 
 private const val SONG_KEY = "song"
 private const val PLAY_KEY = "played"

@@ -1,11 +1,12 @@
-package edu.uw.ss251.dotify
+package edu.uw.ss251.dotify.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import edu.uw.ss251.dotify.fragment.StatisticsFragmentArgs
 import edu.uw.ss251.dotify.databinding.FragmentStatisticsBinding
 
 class StatisticsFragment : Fragment() {

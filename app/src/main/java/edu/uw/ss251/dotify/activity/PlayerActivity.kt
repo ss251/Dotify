@@ -1,4 +1,4 @@
-package edu.uw.ss251.dotify
+package edu.uw.ss251.dotify.activity
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import com.ericchee.songdataprovider.Song
 import edu.uw.ss251.dotify.databinding.ActivityPlayerBinding
 import kotlin.random.Random
@@ -29,7 +28,7 @@ class PlayerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPlayerBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityPlayerBinding.inflate(layoutInflater)
+        binding = ActivityPlayerBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
@@ -65,7 +64,8 @@ class PlayerActivity : AppCompatActivity() {
 
         }
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
         fun clickPrevious(view: View) {

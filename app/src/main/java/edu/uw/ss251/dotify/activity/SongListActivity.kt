@@ -1,13 +1,12 @@
-package edu.uw.ss251.dotify
+package edu.uw.ss251.dotify.activity
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
+import edu.uw.ss251.dotify.R
+import edu.uw.ss251.dotify.adapter.SongListAdapter
 import edu.uw.ss251.dotify.databinding.ActivitySongListBinding
 
 class SongListActivity : AppCompatActivity() {

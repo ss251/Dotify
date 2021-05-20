@@ -1,10 +1,10 @@
-package edu.uw.ss251.dotify
+package edu.uw.ss251.dotify.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import edu.uw.ss251.dotify.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
