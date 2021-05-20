@@ -13,7 +13,7 @@ import edu.uw.ss251.dotify.databinding.ActivitySettingsBinding
 private const val SONG_KEY = "song"
 private const val PLAY_KEY = "played"
 
-fun loadSettingsActivity(context: Context, song: Song, played: Int)= with(context) {
+fun loadSettingsActivity(context: Context, song: Song?, played: Int)= with(context) {
     startActivity(Intent(this,SettingsActivity::class.java).apply {
         putExtra(SONG_KEY,song)
         putExtra(PLAY_KEY,played)

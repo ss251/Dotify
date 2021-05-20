@@ -47,9 +47,9 @@ class PlayerActivity : AppCompatActivity() {
         binding.nextButton.setOnClickListener {
             clickNext(view)
         }
-        /*binding.artistName.setOnClickListener(
+        binding.artistName.setOnClickListener {
             showArtist(view)
-        )*/
+        }
 
         noPlays.text = noOfPlays.toString()
 
@@ -67,6 +67,11 @@ class PlayerActivity : AppCompatActivity() {
                 if (song != null) {
                     loadSettingsActivity(this@PlayerActivity, song, noOfPlays)
                 }
+            }
+
+            artistName.setOnClickListener {
+                val artist = artistName.text
+                loadArtistActivity(this@PlayerActivity, artist)
             }
 
         }
@@ -90,6 +95,11 @@ class PlayerActivity : AppCompatActivity() {
 
         fun clickSettings(view: View) {
             val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+        fun showArtist(view: View) {
+            val intent = Intent(this, ArtistActivity::class.java)
             startActivity(intent)
         }
 

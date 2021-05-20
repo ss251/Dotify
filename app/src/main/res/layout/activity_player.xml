@@ -57,7 +57,7 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:onClick="showArtist"
-        tools:ignore="OnClick" />
+        />
 
     <TextView
         android:id="@+id/noPlays"

@@ -1,6 +1,6 @@
 package edu.uw.ss251.dotify.repository
 
-import edu.uw.ss251.dotify.model.Artist
+import edu.uw.ss251.dotify.model.Artists
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -12,14 +12,13 @@ class DataRepository {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ArtistService::class.java)
-
-    suspend fun getArtist(): Artist = artistService.getArtist()
+    suspend fun getArtists(): Artists = artistService.getArtists()
 }
 
 
 interface ArtistService {
 
     @GET("echeeUW/codesnippets/master/allartists.json")
-    suspend fun getArtist(): Artist
+    suspend fun getArtists(): Artists
 
 }

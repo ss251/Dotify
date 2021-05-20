@@ -11,6 +11,8 @@ class DotifyApplication: Application() {
     override fun onCreate() {
         super.onCreate()
 
+        dataRepository = DataRepository()
+
         Toast.makeText(this, "Dotify loaded", Toast.LENGTH_SHORT).show()
     }
 }

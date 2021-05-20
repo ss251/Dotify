@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.uw.ss251.dotify">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".DotifyApplication"
         android:allowBackup="true"
@@ -10,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dotify">
-        <activity android:name=".activity.ArtistActivity"></activity>
+        <activity android:name=".activity.ArtistActivity" />
         <activity android:name=".activity.SettingsActivity" />
         <activity android:name=".activity.SongListActivity">
             <intent-filter>
