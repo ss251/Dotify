@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ericchee.songdataprovider.Song
+import edu.uw.ss251.dotify.DotifyApplication
 import edu.uw.ss251.dotify.databinding.ActivityPlayerBinding
 import kotlin.random.Random
 
@@ -26,6 +27,9 @@ fun loadPlayerActivity(context: Context, song: Song) {
 class PlayerActivity : AppCompatActivity() {
     private var noOfPlays = Random.nextInt(1000, 1000000)
     private lateinit var binding: ActivityPlayerBinding
+
+    private val dotifyApp: DotifyApplication by lazy { application as DotifyApplication }
+    private val dataRepository by lazy { dotifyApp.dataRepository }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPlayerBinding.inflate(layoutInflater)
@@ -43,6 +47,9 @@ class PlayerActivity : AppCompatActivity() {
         binding.nextButton.setOnClickListener {
             clickNext(view)
         }
+        /*binding.artistName.setOnClickListener(
+            showArtist(view)
+        )*/
 
         noPlays.text = noOfPlays.toString()
 
@@ -85,6 +92,16 @@ class PlayerActivity : AppCompatActivity() {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
+
+        /*suspend fun showArtist(view: View): View.OnClickListener? {
+            with(binding){
+                lifecycleScope.launchWhenCreated {
+                    val artist = dataRepository.getArtist()
+                }
+            }
+            val artist = dataRepository.getArtist()
+            return binding.root
+        }*/
 
         //username and edittext (hw1 and 2)
         /*fun clickChangeUser(view: View) {
