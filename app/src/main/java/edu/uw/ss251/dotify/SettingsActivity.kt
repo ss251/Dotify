@@ -29,13 +29,14 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater).apply {setContentView(root)}
 
-        with(binding) {
-            navController.setGraph(R.navigation.nav_graph, intent.extras)
-            setupActionBarWithNavController(navController)
-        }
+        navController.setGraph(R.navigation.nav_graph, intent.extras)
+        setupActionBarWithNavController(navController)
         title = getString(R.string.settings_header)
     }
 
-    override fun onNavigateUp() = navController.navigateUp()
+    override fun onSupportNavigateUp(): Boolean {
+        navController.navigateUp()
+        return true
+    }
 
 }

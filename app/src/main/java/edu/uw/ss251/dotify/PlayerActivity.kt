@@ -29,7 +29,7 @@ class PlayerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPlayerBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPlayerBinding.inflate(layoutInflater)
+        val binding = ActivityPlayerBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
@@ -64,6 +64,8 @@ class PlayerActivity : AppCompatActivity() {
             }
 
         }
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
         fun clickPrevious(view: View) {
