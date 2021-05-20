@@ -9,14 +9,16 @@ import androidx.navigation.fragment.navArgs
 import edu.uw.ss251.dotify.databinding.FragmentStatisticsBinding
 
 class StatisticsFragment : Fragment() {
-    private val safeArgs: SettingsFragmentArgs by navArgs()
+    private val safeArgs: StatisticsFragmentArgs by navArgs()
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentStatisticsBinding.inflate(inflater)
         val passedSong = safeArgs.song
         val playCount = safeArgs.played
+        val songTitle = safeArgs.song.title
+
         val statsPlayCountTxt = "Play Count: $playCount"
 
         with(binding){

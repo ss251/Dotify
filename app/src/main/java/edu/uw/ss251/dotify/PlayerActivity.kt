@@ -11,8 +11,7 @@ import com.ericchee.songdataprovider.Song
 import edu.uw.ss251.dotify.databinding.ActivityPlayerBinding
 import kotlin.random.Random
 
-private val noOfPlays = Random.nextInt(1000, 1000000)
-private var plays = noOfPlays
+
 private const val SONG_KEY = "song"
 
 fun loadPlayerActivity(context: Context, song: Song) {
@@ -26,6 +25,7 @@ fun loadPlayerActivity(context: Context, song: Song) {
 }
 
 class PlayerActivity : AppCompatActivity() {
+    private var noOfPlays = Random.nextInt(1000, 1000000)
     private lateinit var binding: ActivityPlayerBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,28 +45,24 @@ class PlayerActivity : AppCompatActivity() {
             clickNext(view)
         }
 
+        noPlays.text = noOfPlays.toString()
+
         with(binding) {
 
-
+            val song: Song? = intent.getParcelableExtra(SONG_KEY)
+            songName.text = song?.title
+            artistName.text = song?.artist
             noPlays.text = noOfPlays.toString()
-
-            with(binding) {
-
-                val song: Song? = intent.getParcelableExtra(SONG_KEY)
-                songName.text = song?.title
-                artistName.text = song?.artist
-                noPlays.text = noOfPlays.toString()
-                if (song != null) {
-                    albumArt.setImageResource(song.largeImageID)
-                }
-
-                btnSettings.setOnClickListener {
-                    if (song != null) {
-                        loadSettingsActivity(this@PlayerActivity, song, noOfPlays)
-                    }
-                }
-
+            if (song != null) {
+                albumArt.setImageResource(song.largeImageID)
             }
+
+            btnSettings.setOnClickListener {
+                if (song != null) {
+                    loadSettingsActivity(this@PlayerActivity, song, noOfPlays)
+                }
+            }
+
         }
     }
 
@@ -75,8 +71,8 @@ class PlayerActivity : AppCompatActivity() {
         }
 
         fun clickPlay(view: View) {
-            plays += 1
-            binding.noPlays.text = (plays).toString()
+            noOfPlays += 1
+            binding.noPlays.text = (noOfPlays).toString()
         }
 
         fun clickNext(view: View) {
