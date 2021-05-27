@@ -1,4 +1,4 @@
-# Dotify - Homework 3 – Fragments, Activity Lifecycles and Rotations
+# Dotify - Homework 3 – Application, JSON parsing, HTTP REST calls
 
 ## Sailesh Sivakumar INFO 448 SP 21
 
