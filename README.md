@@ -1,4 +1,4 @@
-# Dotify - Homework 3 – Application, JSON parsing, HTTP REST calls
+# Dotify - Homework 4 – Application, JSON parsing, HTTP REST calls
 
 ## Sailesh Sivakumar INFO 448 SP 21
 
