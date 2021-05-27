@@ -10,12 +10,12 @@ import com.ericchee.songdataprovider.Song
 import edu.uw.ss251.dotify.R
 import edu.uw.ss251.dotify.databinding.ActivitySettingsBinding
 
-private const val SONG_KEY = "song"
+private const val SONG = "song"
 private const val PLAY_KEY = "played"
 
 fun loadSettingsActivity(context: Context, song: Song?, played: Int)= with(context) {
     startActivity(Intent(this,SettingsActivity::class.java).apply {
-        putExtra(SONG_KEY,song)
+        putExtra(SONG,song)
         putExtra(PLAY_KEY,played)
     })
 }

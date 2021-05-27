@@ -12,7 +12,7 @@ import edu.uw.ss251.dotify.databinding.ActivityPlayerBinding
 import kotlin.random.Random
 
 
-private const val SONG_KEY = "song"
+const val SONG_KEY = "song"
 
 fun loadPlayerActivity(context: Context, song: Song) {
     val intent = Intent(context, PlayerActivity::class.java)
