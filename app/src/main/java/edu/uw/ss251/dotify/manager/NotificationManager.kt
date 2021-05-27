@@ -35,7 +35,7 @@ class NotificationManager(
 
         val builder = NotificationCompat.Builder(context, NEW_SONG_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_music_icon)
-            .setContentTitle("New music from ${song.artist}")
+            .setContentTitle("${song.artist} just released a new song!!!")
             .setContentText("Listen now to ${song.title}")
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
@@ -50,7 +50,7 @@ class NotificationManager(
 
     private fun initNotificationChannels() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name = "New Track"
+            val name = "New Uploaded Music"
             val descriptionText = "Notify when artist releases new track"
             val importance = NotificationManager.IMPORTANCE_DEFAULT
             val channel = NotificationChannel(NEW_SONG_CHANNEL_ID, name, importance).apply {
