@@ -36,7 +36,7 @@ class NotificationManager(
         val builder = NotificationCompat.Builder(context, NEW_SONG_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_music_icon)
             .setContentTitle("${song.artist} just released a new song!!!")
-            .setContentText("Listen now to ${song.title}")
+            .setContentText("Listen to ${song.title} now on Dotify")
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
