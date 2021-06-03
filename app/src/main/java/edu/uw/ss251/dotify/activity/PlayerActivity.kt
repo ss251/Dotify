@@ -3,6 +3,7 @@ package edu.uw.ss251.dotify.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ import kotlin.random.Random
 
 
 const val SONG_KEY = "song"
+private const val PLAY_COUNT = "plays"
 
 fun loadPlayerActivity(context: Context, song: Song) {
     val intent = Intent(context, PlayerActivity::class.java)
@@ -32,6 +34,13 @@ class PlayerActivity : AppCompatActivity() {
     private val dataRepository by lazy { dotifyApp.dataRepository }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (savedInstanceState != null) {
+            with(savedInstanceState) {
+                noOfPlays = getInt(PLAY_COUNT, -1)
+            }
+        }
+
         binding = ActivityPlayerBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -78,6 +87,21 @@ class PlayerActivity : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(PLAY_COUNT, noOfPlays)
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onContextItemSelected(item)
     }
 
         fun clickPrevious(view: View) {
